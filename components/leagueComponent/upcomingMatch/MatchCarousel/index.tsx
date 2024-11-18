@@ -24,7 +24,7 @@ export default function MatchCarousel() {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-  }, [api]);
+  }, [api, current, count]);
 
   return (
     <div className="mx-auto">

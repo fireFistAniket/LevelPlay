@@ -1,3 +1,4 @@
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import AuthTemplate from "@/templates/AuthTemplate";
@@ -36,6 +37,19 @@ export default function Login() {
             placeholder="Enter your password"
             className="rounded-lg p-5 border border-[#e1dede] outline-none"
           />
+        </div>
+        <div className="flex justify-between">
+          <div className="flex">
+            <Checkbox id="remember" />
+            <Label htmlFor="remember" className="text-primary/50 text-base">
+              Remember me
+            </Label>
+          </div>
+          <div>
+            <h3 className="text-base text-right text-primary/70">
+              Forgot password?
+            </h3>
+          </div>
         </div>
       </div>
     </AuthTemplate>

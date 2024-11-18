@@ -51,4 +51,3 @@ export default function Links({ links }: { links: LinkProps[] }) {
   );
 }
 
-const itemIds = [0, 1, 2, 3, 4];

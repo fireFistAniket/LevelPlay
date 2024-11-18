@@ -34,7 +34,13 @@ export default function Watch() {
       <Separator />
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 lg:gap-5">
         {liveWatches.map((live, id) => (
-          <WatchCard title={live.title} views={live.views} cover={live.cover} video={live.video} />
+          <WatchCard
+            key={id}
+            title={live.title}
+            views={live.views}
+            cover={live.cover}
+            video={live.video}
+          />
         ))}
       </div>
     </div>

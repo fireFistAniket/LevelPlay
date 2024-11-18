@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { IoSearchSharp } from "react-icons/io5";
-const variant = {};
 
 export default function ExtraHeader() {
   const { scrollY } = useScroll();
