@@ -202,7 +202,7 @@ export default function PointTable() {
     <Accordion
       type="single"
       collapsible
-      value="item-1"
+      defaultValue="item-1"
       className="w-full flex flex-col gap-3 shadow-[0px_4px_35px_0px_#0000000F] border border-[#e7e7e7] bg-white overflow-hidden rounded-xl"
     >
       <AccordionItem

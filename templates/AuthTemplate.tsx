@@ -26,7 +26,16 @@ export default function AuthTemplate({
           </Link>
         </div>
       </nav>
-      <div>
+      <div className="flex flex-col md:flex-row relative justify-center items-center md:mx-12 gap-4 md:gap-28">
+        <div className="">
+          <Image
+            src="/login-Screen-img.png"
+            alt="LevelPlay"
+            width={897}
+            height={688}
+            className="w-full md:w-[56rem]"
+          />
+        </div>
         <>{children}</>
       </div>
     </main>

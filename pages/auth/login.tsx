@@ -1,55 +1,22 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import LoginForm from "@/components/logincomponent/LoginForm";
 import AuthTemplate from "@/templates/AuthTemplate";
+import Link from "next/link";
 
 export default function Login() {
   return (
     <AuthTemplate>
-      <div className="flex flex-col gap-6">
-        <h1 className="text-primary font-semibold capitalize text-4xl">
+      <div className="flex flex-col gap-6 relative z-50 backdrop-blur-sm items-center lg:items-stretch py-2 md:py-0">
+        <h1 className="text-primary font-semibold capitalize text-2xl md:text-4xl">
           Member Login
         </h1>
-        <div className="flex flex-col gap-5">
-          <Label
-            htmlFor="email"
-            className="text-primary font-semibold text-base"
-          >
-            Email Address/Phone No.
-          </Label>
-          <Input
-            type="email"
-            id="email"
-            placeholder="Enter your email address/phone no."
-            className="rounded-lg p-5 border border-[#e1dede] outline-none"
-          />
-        </div>
-        <div className="flex flex-col gap-5">
-          <Label
-            htmlFor="password"
-            className="text-primary font-semibold text-base"
-          >
-            Password
-          </Label>
-          <Input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            className="rounded-lg p-5 border border-[#e1dede] outline-none"
-          />
-        </div>
-        <div className="flex justify-between">
-          <div className="flex">
-            <Checkbox id="remember" />
-            <Label htmlFor="remember" className="text-primary/50 text-base">
-              Remember me
-            </Label>
-          </div>
-          <div>
-            <h3 className="text-base text-right text-primary/70">
-              Forgot password?
-            </h3>
-          </div>
+        <LoginForm />
+        <div className="self-center">
+          <h2 className="text-primary tracking-wide text-sm md:text-base font-medium">
+            Not a member yet?{" "}
+            <Link className="text-[#3876ef] font-semibold" href="/auth/signup">
+              Create new account
+            </Link>
+          </h2>
         </div>
       </div>
     </AuthTemplate>

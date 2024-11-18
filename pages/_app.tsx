@@ -1,3 +1,5 @@
+import { Toaster } from "@/components/ui/toaster";
+import AuthContextProvider from "@/context/AuthContext";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Bebas_Neue, Poppins } from "next/font/google";
@@ -28,7 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
       </Head>
-      <Component {...pageProps} />
+      <AuthContextProvider>
+        <Component {...pageProps} />
+        <Toaster />
+      </AuthContextProvider>
     </>
   );
 }

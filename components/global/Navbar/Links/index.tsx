@@ -32,7 +32,13 @@ type LinkProps = {
   label: string;
 };
 
-export default function Links({ links }: { links: LinkProps[] }) {
+export default function Links({
+  links,
+  isLoggedIn,
+}: {
+  links: LinkProps[];
+  isLoggedIn: boolean;
+}) {
   return (
     <motion.ul variants={ulVariants} className="px-6 py-16">
       {links.map((item, index) => (
@@ -47,7 +53,17 @@ export default function Links({ links }: { links: LinkProps[] }) {
           </Link>
         </motion.li>
       ))}
+      {!isLoggedIn && (
+        <motion.li
+          variants={liVariants}
+          whileTap={{ scale: 0.95 }}
+          className="mb-5 first:text-white text-white/60"
+        >
+          <Link href="/auth/login" className="">
+            Log In
+          </Link>
+        </motion.li>
+      )}
     </motion.ul>
   );
 }
-

@@ -39,7 +39,7 @@ export default function HomeCarousel() {
                 <div className="flex flex-col gap-0 lg:gap-24 xl:gap-32 2xl:gap-40 lg:flex-row justify-normal lg:justify-center items-center bg-[linear-gradient(358deg,_#000000_-0.42%,_rgba(0,_0,_0,_0)_99.48%)] px-3 py-0 2xl:px-32 2xl:py-3 h-full">
                   <div className="flex flex-col px-4 mt-16 gap-3 flex-shrink">
                     <h1 className="font-bebas-neue text-7xl lg:text-8xl xl:text-9xl text-white ">
-                      Exciting game this week
+                      Exciting games this week
                     </h1>
                     <button
                       type="button"

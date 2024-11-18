@@ -1,3 +1,4 @@
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
@@ -10,25 +11,32 @@ export default function MatchHighLight() {
       <Separator />
       <div className="flex flex-col gap-5">
         {Array.from({ length: 5 }).map((_, id) => (
-          <div
-            key={id}
-            className="flex truncate 2xl:whitespace-normal 2xl:overflow-visible items-center"
-          >
-            <Image
-              src="/play-button-dark.png"
-              alt="play button"
-              width={32}
-              height={32}
-              className="size-6"
-            />
-            <span className="flex-1 ps-2 text-xs lg:text-base text-primary">
-              Laurens: Coote&apos;s Liverpool comments a terrible look for the
-              Premier League
-            </span>
-            <span className="text-xs xl:text-base text-primary ps-2">
-              20 mins long
-            </span>
-          </div>
+          <Dialog key={id}>
+            <DialogTrigger asChild className="cursor-pointer">
+              <div className="flex truncate 2xl:whitespace-normal 2xl:overflow-visible items-center">
+                <Image
+                  src="/play-button-dark.png"
+                  alt="play button"
+                  width={32}
+                  height={32}
+                  className="size-6"
+                />
+                <span className="flex-1 ps-2 text-xs lg:text-base text-primary">
+                  Laurens: Coote&apos;s Liverpool comments a terrible look for
+                  the Premier League
+                </span>
+                <span className="text-xs xl:text-base text-primary ps-2">
+                  20 mins long
+                </span>
+              </div>
+            </DialogTrigger>
+            <DialogContent className="w-full max-w-fit">
+              <video className="h-full w-full rounded-lg" controls>
+                <source src="/video/highlight-video-fit.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </DialogContent>
+          </Dialog>
         ))}
       </div>
     </div>

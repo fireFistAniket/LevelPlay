@@ -26,6 +26,13 @@ export default function MatchCarousel() {
     });
   }, [api, current, count]);
 
+  const upcomingImages = [
+    "/upcomingmatches/upcoming-cover-1.png",
+    "/upcomingmatches/upcoming-cover-2.jpg",
+    "/upcomingmatches/upcoming-cover-3.jpg",
+    "/upcomingmatches/upcoming-cover-4.jpg",
+  ];
+
   return (
     <div className="mx-auto">
       <Carousel
@@ -35,16 +42,16 @@ export default function MatchCarousel() {
         opts={{ loop: true }}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {upcomingImages.map((img, index) => (
             <CarouselItem key={index} className="w-full">
               <Card className="border-0 rounded-none w-full">
                 <CardContent className="flex items-center 2xl:items-stretch justify-center relative px-0 rounded-md overflow-hidden">
                   <Image
-                    src="/upcoming-cover.png"
+                    src={img}
                     alt="upcoming"
                     width={934}
                     height={418}
-                    className="w-full min-h-[444px] object-cover self-stretch"
+                    className="w-full max-h-[444px] object-cover self-stretch"
                   />
                   <div className="absolute bottom-0 left-0 bg-primary/35 backdrop-blur-lg w-full py-5 px-3 2xl:px-10 flex flex-col gap-2">
                     <h1 className="text-[#f5f5f5] font-bebas-neue text-3xl">
