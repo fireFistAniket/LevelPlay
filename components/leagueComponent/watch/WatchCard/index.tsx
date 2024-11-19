@@ -4,12 +4,10 @@ import {
   CardDescription,
   CardHeader,
 } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
+import { useState } from "react";
 export default function WatchCard({
   title,
   views,
@@ -21,6 +19,11 @@ export default function WatchCard({
   cover: string;
   video: string;
 }) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const handleLoadedData = () => {
+    setIsLoading(false); // Video has loaded, stop showing the skeleton
+  };
   return (
     <Card>
       <CardHeader className="relative">
@@ -36,8 +39,15 @@ export default function WatchCard({
             <DialogTrigger asChild className="cursor-pointer">
               <Image src="/play-button.png" alt="play" width={50} height={50} />
             </DialogTrigger>
-            <DialogContent className="w-full max-w-fit">
-              <video className="h-full w-full rounded-lg" controls>
+            <DialogContent className="w-full md:max-w-fit">
+              {isLoading && (
+                <Skeleton className="absolute inset-0 rounded-lg z-50 w-full" />
+              )}
+              <video
+                className="h-full w-full rounded-lg"
+                onLoadedData={handleLoadedData}
+                controls
+              >
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
