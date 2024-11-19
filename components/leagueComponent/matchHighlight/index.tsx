@@ -1,8 +1,16 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
+import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function MatchHighLight() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const handleLoadedData = () => {
+    setIsLoading(false); // Video has loaded, stop showing the skeleton
+  };
+
   return (
     <div className="flex flex-col gap-3 p-3 2xl:p-12 shadow-[0px_4.28px_37.46px_0px_#0000000F] border border-[#e7e7e7] bg-white rounded-md">
       <h1 className="font-bebas-neue text-3xl text-primary uppercase">
@@ -30,8 +38,15 @@ export default function MatchHighLight() {
                 </span>
               </div>
             </DialogTrigger>
-            <DialogContent className="w-full max-w-fit">
-              <video className="h-full w-full rounded-lg" controls>
+            <DialogContent className="w-full md:max-w-fit">
+              {isLoading && (
+                <Skeleton className="absolute inset-0 rounded-lg z-50 w-full" />
+              )}
+              <video
+                className="h-full w-full rounded-lg"
+                controls
+                onLoadedData={handleLoadedData}
+              >
                 <source src="/video/highlight-video-fit.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

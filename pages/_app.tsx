@@ -1,3 +1,4 @@
+import BotButton from "@/components/global/BotButton";
 import { Toaster } from "@/components/ui/toaster";
 import AuthContextProvider from "@/context/AuthContext";
 import "@/styles/globals.css";
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <AuthContextProvider>
         <Component {...pageProps} />
         <Toaster />
+        <BotButton />
       </AuthContextProvider>
     </>
   );

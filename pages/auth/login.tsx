@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <AuthTemplate>
-      <div className="flex flex-col gap-6 relative z-50 backdrop-blur-sm items-center lg:items-stretch py-2 md:py-0">
+      <div className="flex flex-col gap-6 relative items-center lg:items-stretch py-2 md:py-0">
         <h1 className="text-primary font-semibold capitalize text-2xl md:text-4xl">
           Member Login
         </h1>

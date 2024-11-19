@@ -6,30 +6,30 @@ export default function MatchReplays() {
     {
       title: "Give Wallace Sititi the Breakthrough Player of the Year gong now",
       date: "2 days ago",
-      views: "125K Views ",
+      views: "125K Views",
       cover: "/watchreplays/match-replays-cover-1.jpg",
-      video: "/video/Recorded-Video-Feed.mp4",
+      video: "/video/Recorded-Video-Feed-1.mp4",
     },
     {
       title: "Wallabies strike late to win thriller",
       date: "3 days ago",
-      views: "320K Views ",
+      views: "320K Views",
       cover: "/watchreplays/match-replays-cover-2.jpg",
-      video: "/video/Recorded-Video-Feed.mp4",
+      video: "/video/Recorded-Video-Feed-2.mp4",
     },
     {
       title: "Ireland 'too desperate' in loss to New Zealand",
       date: "2 days ago",
-      views: "225K Views ",
+      views: "225K Views",
       cover: "/watchreplays/match-replays-cover-3.jpg",
-      video: "/video/Recorded-Video-Feed.mp4",
+      video: "/video/Recorded-Video-Feed-1.mp4",
     },
     {
       title: "Behind the Broadcast: Big Noon Saturday",
       date: "1 days ago",
-      views: "12K Views ",
+      views: "12K Views",
       cover: "/watchreplays/match-replays-cover-4.jpg",
-      video: "/video/Recorded-Video-Feed.mp4",
+      video: "/video/Recorded-Video-Feed-2.mp4",
     },
   ];
   return (
